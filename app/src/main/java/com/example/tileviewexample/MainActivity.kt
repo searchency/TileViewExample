@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
     private var currentPosition: Int = 0
     private var positionDelta: Int = 0
 
-    private var floorWidth = 1920
-    private var floorHeight = 1020
+    private var floorWidth = 1669
+    private var floorHeight = 1336
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         timer = Timer()
-        currentPosition = 850
+        currentPosition = 650
         positionDelta = 10
 
         timer!!.scheduleAtFixedRate(object : TimerTask() {
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread { addPin(currentPosition.toDouble(), 500.0) }
                 currentPosition += positionDelta
 
-                if (currentPosition < 850 || currentPosition > 1000) {
+                if (currentPosition < 650 || currentPosition > 800) {
                     positionDelta = -positionDelta
                 }
             }
